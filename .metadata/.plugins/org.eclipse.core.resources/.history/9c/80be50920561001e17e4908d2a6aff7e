@@ -194,7 +194,7 @@ int main(void)
   			HAL_GPIO_WritePin(SEG3_GPIO_Port, SEG3_Pin, RESET);
   			HAL_GPIO_WritePin(SEG4_GPIO_Port, SEG4_Pin, RESET);
   			HAL_GPIO_WritePin(SEG5_GPIO_Port, SEG5_Pin, RESET);
-  			HAL_GPIO_WritePin(SEG6_GPIO_Port, SEG6_Pin, RESET);
+  			HAL_GPIO_WritePin(SEG6_GPIO_Port, SEG6_Pin, SET);
   			break;
   		case 7:
   			HAL_GPIO_WritePin(SEG0_GPIO_Port, SEG0_Pin, RESET);
@@ -317,6 +317,7 @@ int main(void)
 	  hour = 0;
 	  }
 	  updateClockBuffer ();
+	  HAL_Delay (1000) ;
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

@@ -309,7 +309,7 @@ int main(void)
 	  second = 0;
 	  minute ++;
 	  }
-	  if( minute >= 60) {
+	  if( minute >= 2) {
 	  minute = 0;
 	  hour ++;
 	  }

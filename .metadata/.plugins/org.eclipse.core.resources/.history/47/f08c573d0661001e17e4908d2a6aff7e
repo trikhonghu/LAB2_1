@@ -305,7 +305,7 @@ int main(void)
 		  update7SEG(index_led);
 		  setTimerSwitch(25);
 	  }
-	  if ( second >= 60) {
+	  if ( second >= 2) {
 	  second = 0;
 	  minute ++;
 	  }
