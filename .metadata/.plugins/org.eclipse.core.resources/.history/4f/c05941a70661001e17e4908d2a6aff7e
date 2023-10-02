@@ -305,21 +305,17 @@ int main(void)
 		  update7SEG(index_led);
 		  setTimerSwitch(25);
 	  }
-
 	  if ( second >= 60) {
 	  second = 0;
 	  minute ++;
 	  }
-
 	  if( minute >= 60) {
 	  minute = 0;
 	  hour ++;
 	  }
-
 	  if( hour >=24){
 	  hour = 0;
 	  }
-
 	  updateClockBuffer ();
     /* USER CODE BEGIN 3 */
   }

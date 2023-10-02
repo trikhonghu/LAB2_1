@@ -717,6 +717,7 @@ int main(void)
  80005bc:	2019      	movs	r0, #25
  80005be:	f7ff fdc5 	bl	800014c <setTimerSwitch>
 	  }
+
 	  if ( second >= 60) {
  80005c2:	6a7b      	ldr	r3, [r7, #36]	; 0x24
  80005c4:	2b3b      	cmp	r3, #59	; 0x3b
@@ -729,6 +730,7 @@ int main(void)
  80005ce:	3301      	adds	r3, #1
  80005d0:	603b      	str	r3, [r7, #0]
 	  }
+
 	  if( minute >= 60) {
  80005d2:	683b      	ldr	r3, [r7, #0]
  80005d4:	2b3b      	cmp	r3, #59	; 0x3b
@@ -741,6 +743,7 @@ int main(void)
  80005de:	3301      	adds	r3, #1
  80005e0:	607b      	str	r3, [r7, #4]
 	  }
+
 	  if( hour >=24){
  80005e2:	687b      	ldr	r3, [r7, #4]
  80005e4:	2b17      	cmp	r3, #23
@@ -749,6 +752,7 @@ int main(void)
  80005e8:	2300      	movs	r3, #0
  80005ea:	607b      	str	r3, [r7, #4]
 	  }
+
 	  updateClockBuffer ();
  80005ec:	463b      	mov	r3, r7
  80005ee:	469c      	mov	ip, r3
