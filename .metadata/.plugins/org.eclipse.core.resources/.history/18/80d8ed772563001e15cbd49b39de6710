@@ -291,7 +291,6 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    /* USER CODE BEGIN 3 */
 	  if(dot_flag == 1){
 		  second++;
 		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
@@ -318,6 +317,7 @@ int main(void)
 	  hour = 0;
 	  }
 	  updateClockBuffer ();
+    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
