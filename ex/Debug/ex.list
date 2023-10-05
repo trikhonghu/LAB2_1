@@ -669,6 +669,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+    /* USER CODE BEGIN 3 */
 	  if(dot_flag == 1){
  8000574:	4b22      	ldr	r3, [pc, #136]	; (8000600 <main+0xe4>)
  8000576:	681b      	ldr	r3, [r3, #0]
