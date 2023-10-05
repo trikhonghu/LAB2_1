@@ -1,6 +1,10 @@
-16:32:53 **** Incremental Build of configuration Debug for project ex ****
+09:12:35 **** Incremental Build of configuration Debug for project ex ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:150:11: warning: unused variable 'matrix_buffer' [-Wunused-variable]
+  150 |   uint8_t matrix_buffer[8] = {0x01 , 0x02 , 0x03 , 0x04 , 0x05 , 0x06 , 0x07 , 0x08 };
+      |           ^~~~~~~~~~~~~
 arm-none-eabi-gcc -o "ex.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Desktop\lab_vxl\lab2_1\ex\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ex.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: ex.elf
  
@@ -8,13 +12,13 @@ arm-none-eabi-size   ex.elf
 arm-none-eabi-objdump -h -S  ex.elf  > "ex.list"
 arm-none-eabi-objcopy  -O ihex  ex.elf  "ex.hex"
    text	   data	    bss	    dec	    hex	filename
-   8552	     20	   1660	  10232	   27f8	ex.elf
+  10512	     20	   1668	  12200	   2fa8	ex.elf
 arm-none-eabi-objcopy  -O binary  ex.elf  "ex.bin"
 Finished building: default.size.stdout
  
 Finished building: ex.hex
 Finished building: ex.bin
  
-Finished building: ex.list
  
+Finished building: ex.list
  
