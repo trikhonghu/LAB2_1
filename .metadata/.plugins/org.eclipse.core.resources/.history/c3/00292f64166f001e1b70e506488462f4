@@ -557,7 +557,7 @@ int main(void)
 			  count_frame =0;
 		  //update_frame();
 		  updateLEDMatrix(index_led_matrix);
-		  setTimerMatrix(5);
+		  setTimerMatrix(100);
 	  }
 
 	  if(dot_flag == 1){
@@ -572,7 +572,7 @@ int main(void)
 		  if(index_led >= MAX_LED)
 			  index_led =0;
 		  update7SEG(index_led);
-		  setTimerSwitch(25);
+		  setTimerSwitch(100);
 	  }
 
 	  if ( second >= 60) {

@@ -557,7 +557,7 @@ int main(void)
 			  count_frame =0;
 		  //update_frame();
 		  updateLEDMatrix(index_led_matrix);
-		  setTimerMatrix(5);
+		  setTimerMatrix(25);
 	  }
 
 	  if(dot_flag == 1){

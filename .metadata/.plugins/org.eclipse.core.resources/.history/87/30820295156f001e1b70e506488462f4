@@ -120,7 +120,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  //GPIO_InitTypeDef GPIO_InitStruct = {0};
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -147,13 +147,13 @@ int main(void)
 
   int count_frame =0;
   const int MAX_FRAME = 14;
-  //int count_row =0;
+  int count_row =0;
   int count_col =0;
 
   const int MAX_LED_MATRIX = 8;
   int index_led_matrix = 0;
   uint8_t matrix_buffer[8] = {0x01 , 0x02 , 0x03 , 0x04 , 0x05 , 0x06 , 0x07 , 0x08 };
-  /*uint8_t cols[8] = {ENM0_Pin, ENM1_Pin, ENM2_Pin, ENM3_Pin, ENM4_Pin, ENM5_Pin, ENM6_Pin, ENM7_Pin};
+  uint8_t cols[8] = {ENM0_Pin, ENM1_Pin, ENM2_Pin, ENM3_Pin, ENM4_Pin, ENM5_Pin, ENM6_Pin, ENM7_Pin};
   uint8_t rows[8] = {ROW0_Pin, ROW1_Pin, ROW2_Pin, ROW3_Pin, ROW4_Pin, ROW5_Pin, ROW6_Pin, ROW7_Pin};
   uint8_t animation_frame[8][14] = {
 		  {0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111},//frame1
@@ -186,7 +186,7 @@ int main(void)
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-  }*/
+  }
 
   void updateLEDMatrix (int index ){
 	  switch ( index ){
@@ -502,7 +502,7 @@ int main(void)
 	  }
   }
 
-  /*void update_frame(){
+  void update_frame(){
 	  for(int row =0; row <=8; row++){
 		  if(animation_frame[count_row][count_frame] == 1){
 			  HAL_GPIO_WritePin(GPIOB, rows[row], RESET);
@@ -511,7 +511,7 @@ int main(void)
 		  }
 	  }
 	  HAL_GPIO_WritePin(GPIOA, cols[count_col], RESET);
-  }*/
+  }
 
   setTimerDot(100);
   setTimerSwitch(25);
@@ -555,9 +555,9 @@ int main(void)
 
 		  if(count_frame >= MAX_FRAME)
 			  count_frame =0;
-		  //update_frame();
-		  updateLEDMatrix(index_led_matrix);
-		  setTimerMatrix(5);
+		  update_frame();
+		  //updateLEDMatrix(index_led_matrix);
+		  setTimerMatrix(100);
 	  }
 
 	  if(dot_flag == 1){
@@ -572,7 +572,7 @@ int main(void)
 		  if(index_led >= MAX_LED)
 			  index_led =0;
 		  update7SEG(index_led);
-		  setTimerSwitch(25);
+		  setTimerSwitch(100);
 	  }
 
 	  if ( second >= 60) {
