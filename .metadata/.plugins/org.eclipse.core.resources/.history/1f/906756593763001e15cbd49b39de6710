@@ -169,7 +169,7 @@ int main(void)
 		  {0b01001001, 0b01001001, 0b01001001, 0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111},//frame11
 		  {0b01001001, 0b01001001, 0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111},//frame12
 		  {0b01001001, 0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111},//frame13
-		  {0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111}//frame14
+		  {0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111},//frame14
   };
 
   for (int i = 0; i < 8; i++) {
@@ -515,7 +515,7 @@ int main(void)
 
   setTimerDot(100);
   setTimerSwitch(25);
-  setTimerMatrix(100);
+  setTimerMatrix(8);
 
   update7SEG(index_led);
   updateLEDMatrix(index_led_matrix);
@@ -557,7 +557,7 @@ int main(void)
 			  count_frame =0;
 		  update_frame();
 		  //updateLEDMatrix(index_led_matrix);
-		  setTimerMatrix(100);
+		  setTimerMatrix(8);
 	  }
 
 	  if(dot_flag == 1){

@@ -120,7 +120,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -148,7 +148,6 @@ int main(void)
   int count_frame =0;
   const int MAX_FRAME = 14;
   int count_row =0;
-  int count_col =0;
 
   const int MAX_LED_MATRIX = 8;
   int index_led_matrix = 0;
@@ -169,24 +168,8 @@ int main(void)
 		  {0b01001001, 0b01001001, 0b01001001, 0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111},//frame11
 		  {0b01001001, 0b01001001, 0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111},//frame12
 		  {0b01001001, 0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111},//frame13
-		  {0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111}//frame14
+		  {0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111},//frame14
   };
-
-  for (int i = 0; i < 8; i++) {
-    GPIO_InitStruct.Pin = rows[i];
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-  }
-
-  for (int i = 0; i < 8; i++) {
-    GPIO_InitStruct.Pin = cols[i];
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-  }
 
   void updateLEDMatrix (int index ){
 	  switch ( index ){
@@ -510,12 +493,11 @@ int main(void)
 			  HAL_GPIO_WritePin(GPIOB, rows[row], SET);
 		  }
 	  }
-	  HAL_GPIO_WritePin(GPIOA, cols[count_col], RESET);
   }
 
   setTimerDot(100);
   setTimerSwitch(25);
-  setTimerMatrix(100);
+  setTimerMatrix(8);
 
   update7SEG(index_led);
   updateLEDMatrix(index_led_matrix);
@@ -543,13 +525,13 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  if(matrix_flag == 1){
 		  index_led_matrix++;
-		  count_col++;
+		  count_row++;
 		  if(index_led_matrix >= MAX_LED_MATRIX){
 			  index_led_matrix = 0;
 		  }
 
-		  if(count_col >= MAX_LED_MATRIX){
-			  count_col = 0;
+		  if(count_row >= MAX_LED_MATRIX){
+			  count_row = 0;
 			  count_frame++;
 		  }
 
@@ -557,7 +539,7 @@ int main(void)
 			  count_frame =0;
 		  update_frame();
 		  //updateLEDMatrix(index_led_matrix);
-		  setTimerMatrix(100);
+		  setTimerMatrix(8);
 	  }
 
 	  if(dot_flag == 1){

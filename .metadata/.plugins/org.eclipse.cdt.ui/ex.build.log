@@ -1,9 +1,163 @@
-09:12:35 **** Incremental Build of configuration Debug for project ex ****
+13:47:32 **** Incremental Build of configuration Debug for project ex ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:241,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:29,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:150:11: warning: unused variable 'matrix_buffer' [-Wunused-variable]
-  150 |   uint8_t matrix_buffer[8] = {0x01 , 0x02 , 0x03 , 0x04 , 0x05 , 0x06 , 0x07 , 0x08 };
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:92:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '1024' to '0' [-Woverflow]
+   92 | #define GPIO_PIN_10                ((uint16_t)0x0400)  /* Pin 10 selected   */
+      |                                    ^
+../Core/Inc/main.h:95:18: note: in expansion of macro 'GPIO_PIN_10'
+   95 | #define ENM2_Pin GPIO_PIN_10
+      |                  ^~~~~~~~~~~
+../Core/Src/main.c:156:42: note: in expansion of macro 'ENM2_Pin'
+  156 |   uint8_t cols[8] = {ENM0_Pin, ENM1_Pin, ENM2_Pin, ENM3_Pin, ENM4_Pin, ENM5_Pin, ENM6_Pin, ENM7_Pin};
+      |                                          ^~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:93:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '2048' to '0' [-Woverflow]
+   93 | #define GPIO_PIN_11                ((uint16_t)0x0800)  /* Pin 11 selected   */
+      |                                    ^
+../Core/Inc/main.h:97:18: note: in expansion of macro 'GPIO_PIN_11'
+   97 | #define ENM3_Pin GPIO_PIN_11
+      |                  ^~~~~~~~~~~
+../Core/Src/main.c:156:52: note: in expansion of macro 'ENM3_Pin'
+  156 |   uint8_t cols[8] = {ENM0_Pin, ENM1_Pin, ENM2_Pin, ENM3_Pin, ENM4_Pin, ENM5_Pin, ENM6_Pin, ENM7_Pin};
+      |                                                    ^~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:94:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '4096' to '0' [-Woverflow]
+   94 | #define GPIO_PIN_12                ((uint16_t)0x1000)  /* Pin 12 selected   */
+      |                                    ^
+../Core/Inc/main.h:99:18: note: in expansion of macro 'GPIO_PIN_12'
+   99 | #define ENM4_Pin GPIO_PIN_12
+      |                  ^~~~~~~~~~~
+../Core/Src/main.c:156:62: note: in expansion of macro 'ENM4_Pin'
+  156 |   uint8_t cols[8] = {ENM0_Pin, ENM1_Pin, ENM2_Pin, ENM3_Pin, ENM4_Pin, ENM5_Pin, ENM6_Pin, ENM7_Pin};
+      |                                                              ^~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:95:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '8192' to '0' [-Woverflow]
+   95 | #define GPIO_PIN_13                ((uint16_t)0x2000)  /* Pin 13 selected   */
+      |                                    ^
+../Core/Inc/main.h:101:18: note: in expansion of macro 'GPIO_PIN_13'
+  101 | #define ENM5_Pin GPIO_PIN_13
+      |                  ^~~~~~~~~~~
+../Core/Src/main.c:156:72: note: in expansion of macro 'ENM5_Pin'
+  156 |   uint8_t cols[8] = {ENM0_Pin, ENM1_Pin, ENM2_Pin, ENM3_Pin, ENM4_Pin, ENM5_Pin, ENM6_Pin, ENM7_Pin};
+      |                                                                        ^~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:96:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '16384' to '0' [-Woverflow]
+   96 | #define GPIO_PIN_14                ((uint16_t)0x4000)  /* Pin 14 selected   */
+      |                                    ^
+../Core/Inc/main.h:103:18: note: in expansion of macro 'GPIO_PIN_14'
+  103 | #define ENM6_Pin GPIO_PIN_14
+      |                  ^~~~~~~~~~~
+../Core/Src/main.c:156:82: note: in expansion of macro 'ENM6_Pin'
+  156 |   uint8_t cols[8] = {ENM0_Pin, ENM1_Pin, ENM2_Pin, ENM3_Pin, ENM4_Pin, ENM5_Pin, ENM6_Pin, ENM7_Pin};
+      |                                                                                  ^~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:97:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '32768' to '0' [-Woverflow]
+   97 | #define GPIO_PIN_15                ((uint16_t)0x8000)  /* Pin 15 selected   */
+      |                                    ^
+../Core/Inc/main.h:105:18: note: in expansion of macro 'GPIO_PIN_15'
+  105 | #define ENM7_Pin GPIO_PIN_15
+      |                  ^~~~~~~~~~~
+../Core/Src/main.c:156:92: note: in expansion of macro 'ENM7_Pin'
+  156 |   uint8_t cols[8] = {ENM0_Pin, ENM1_Pin, ENM2_Pin, ENM3_Pin, ENM4_Pin, ENM5_Pin, ENM6_Pin, ENM7_Pin};
+      |                                                                                            ^~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:90:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '256' to '0' [-Woverflow]
+   90 | #define GPIO_PIN_8                 ((uint16_t)0x0100)  /* Pin 8 selected    */
+      |                                    ^
+../Core/Inc/main.h:115:18: note: in expansion of macro 'GPIO_PIN_8'
+  115 | #define ROW0_Pin GPIO_PIN_8
+      |                  ^~~~~~~~~~
+../Core/Src/main.c:157:22: note: in expansion of macro 'ROW0_Pin'
+  157 |   uint8_t rows[8] = {ROW0_Pin, ROW1_Pin, ROW2_Pin, ROW3_Pin, ROW4_Pin, ROW5_Pin, ROW6_Pin, ROW7_Pin};
+      |                      ^~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:91:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '512' to '0' [-Woverflow]
+   91 | #define GPIO_PIN_9                 ((uint16_t)0x0200)  /* Pin 9 selected    */
+      |                                    ^
+../Core/Inc/main.h:117:18: note: in expansion of macro 'GPIO_PIN_9'
+  117 | #define ROW1_Pin GPIO_PIN_9
+      |                  ^~~~~~~~~~
+../Core/Src/main.c:157:32: note: in expansion of macro 'ROW1_Pin'
+  157 |   uint8_t rows[8] = {ROW0_Pin, ROW1_Pin, ROW2_Pin, ROW3_Pin, ROW4_Pin, ROW5_Pin, ROW6_Pin, ROW7_Pin};
+      |                                ^~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:92:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '1024' to '0' [-Woverflow]
+   92 | #define GPIO_PIN_10                ((uint16_t)0x0400)  /* Pin 10 selected   */
+      |                                    ^
+../Core/Inc/main.h:79:18: note: in expansion of macro 'GPIO_PIN_10'
+   79 | #define ROW2_Pin GPIO_PIN_10
+      |                  ^~~~~~~~~~~
+../Core/Src/main.c:157:42: note: in expansion of macro 'ROW2_Pin'
+  157 |   uint8_t rows[8] = {ROW0_Pin, ROW1_Pin, ROW2_Pin, ROW3_Pin, ROW4_Pin, ROW5_Pin, ROW6_Pin, ROW7_Pin};
+      |                                          ^~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:93:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '2048' to '0' [-Woverflow]
+   93 | #define GPIO_PIN_11                ((uint16_t)0x0800)  /* Pin 11 selected   */
+      |                                    ^
+../Core/Inc/main.h:81:18: note: in expansion of macro 'GPIO_PIN_11'
+   81 | #define ROW3_Pin GPIO_PIN_11
+      |                  ^~~~~~~~~~~
+../Core/Src/main.c:157:52: note: in expansion of macro 'ROW3_Pin'
+  157 |   uint8_t rows[8] = {ROW0_Pin, ROW1_Pin, ROW2_Pin, ROW3_Pin, ROW4_Pin, ROW5_Pin, ROW6_Pin, ROW7_Pin};
+      |                                                    ^~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:94:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '4096' to '0' [-Woverflow]
+   94 | #define GPIO_PIN_12                ((uint16_t)0x1000)  /* Pin 12 selected   */
+      |                                    ^
+../Core/Inc/main.h:83:18: note: in expansion of macro 'GPIO_PIN_12'
+   83 | #define ROW4_Pin GPIO_PIN_12
+      |                  ^~~~~~~~~~~
+../Core/Src/main.c:157:62: note: in expansion of macro 'ROW4_Pin'
+  157 |   uint8_t rows[8] = {ROW0_Pin, ROW1_Pin, ROW2_Pin, ROW3_Pin, ROW4_Pin, ROW5_Pin, ROW6_Pin, ROW7_Pin};
+      |                                                              ^~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:95:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '8192' to '0' [-Woverflow]
+   95 | #define GPIO_PIN_13                ((uint16_t)0x2000)  /* Pin 13 selected   */
+      |                                    ^
+../Core/Inc/main.h:85:18: note: in expansion of macro 'GPIO_PIN_13'
+   85 | #define ROW5_Pin GPIO_PIN_13
+      |                  ^~~~~~~~~~~
+../Core/Src/main.c:157:72: note: in expansion of macro 'ROW5_Pin'
+  157 |   uint8_t rows[8] = {ROW0_Pin, ROW1_Pin, ROW2_Pin, ROW3_Pin, ROW4_Pin, ROW5_Pin, ROW6_Pin, ROW7_Pin};
+      |                                                                        ^~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:96:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '16384' to '0' [-Woverflow]
+   96 | #define GPIO_PIN_14                ((uint16_t)0x4000)  /* Pin 14 selected   */
+      |                                    ^
+../Core/Inc/main.h:87:18: note: in expansion of macro 'GPIO_PIN_14'
+   87 | #define ROW6_Pin GPIO_PIN_14
+      |                  ^~~~~~~~~~~
+../Core/Src/main.c:157:82: note: in expansion of macro 'ROW6_Pin'
+  157 |   uint8_t rows[8] = {ROW0_Pin, ROW1_Pin, ROW2_Pin, ROW3_Pin, ROW4_Pin, ROW5_Pin, ROW6_Pin, ROW7_Pin};
+      |                                                                                  ^~~~~~~~
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h:97:36: warning: conversion from 'short unsigned int' to 'unsigned char' changes value from '32768' to '0' [-Woverflow]
+   97 | #define GPIO_PIN_15                ((uint16_t)0x8000)  /* Pin 15 selected   */
+      |                                    ^
+../Core/Inc/main.h:89:18: note: in expansion of macro 'GPIO_PIN_15'
+   89 | #define ROW7_Pin GPIO_PIN_15
+      |                  ^~~~~~~~~~~
+../Core/Src/main.c:157:92: note: in expansion of macro 'ROW7_Pin'
+  157 |   uint8_t rows[8] = {ROW0_Pin, ROW1_Pin, ROW2_Pin, ROW3_Pin, ROW4_Pin, ROW5_Pin, ROW6_Pin, ROW7_Pin};
+      |                                                                                            ^~~~~~~~
+../Core/Src/main.c:167:5: warning: excess elements in array initializer
+  167 |     {0b01111111, 0b01001001, 0b01001001, 0b01001001, 0b01001001, 0b01001001, 0b11111111, 0b11111111},//frame9
+      |     ^
+../Core/Src/main.c:167:5: note: (near initialization for 'animation_frame')
+../Core/Src/main.c:168:5: warning: excess elements in array initializer
+  168 |     {0b01001001, 0b01001001, 0b01001001, 0b01001001, 0b01001001, 0b11111111, 0b11111111, 0b11111111},//frame10
+      |     ^
+../Core/Src/main.c:168:5: note: (near initialization for 'animation_frame')
+../Core/Src/main.c:169:5: warning: excess elements in array initializer
+  169 |     {0b01001001, 0b01001001, 0b01001001, 0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111},//frame11
+      |     ^
+../Core/Src/main.c:169:5: note: (near initialization for 'animation_frame')
+../Core/Src/main.c:170:5: warning: excess elements in array initializer
+  170 |     {0b01001001, 0b01001001, 0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111},//frame12
+      |     ^
+../Core/Src/main.c:170:5: note: (near initialization for 'animation_frame')
+../Core/Src/main.c:171:5: warning: excess elements in array initializer
+  171 |     {0b01001001, 0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111},//frame13
+      |     ^
+../Core/Src/main.c:171:5: note: (near initialization for 'animation_frame')
+../Core/Src/main.c:172:5: warning: excess elements in array initializer
+  172 |     {0b01001001, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111, 0b11111111}//frame14
+      |     ^
+../Core/Src/main.c:172:5: note: (near initialization for 'animation_frame')
+../Core/Src/main.c:155:11: warning: unused variable 'matrix_buffer' [-Wunused-variable]
+  155 |   uint8_t matrix_buffer[8] = {0x01 , 0x02 , 0x03 , 0x04 , 0x05 , 0x06 , 0x07 , 0x08 };
       |           ^~~~~~~~~~~~~
 arm-none-eabi-gcc -o "ex.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Desktop\lab_vxl\lab2_1\ex\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ex.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: ex.elf
@@ -11,17 +165,17 @@ Finished building target: ex.elf
 arm-none-eabi-size   ex.elf 
 arm-none-eabi-objdump -h -S  ex.elf  > "ex.list"
 arm-none-eabi-objcopy  -O ihex  ex.elf  "ex.hex"
-   text	   data	    bss	    dec	    hex	filename
-  10512	     20	   1668	  12200	   2fa8	ex.elf
 arm-none-eabi-objcopy  -O binary  ex.elf  "ex.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11100	     20	   1668	  12788	   31f4	ex.elf
 Finished building: default.size.stdout
  
-Finished building: ex.hex
 Finished building: ex.bin
+Finished building: ex.hex
  
  
 Finished building: ex.list
  
 
-09:12:36 Build Finished. 0 errors, 1 warnings. (took 537ms)
+13:47:35 Build Finished. 0 errors, 21 warnings. (took 2s.220ms)
 
