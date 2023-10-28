@@ -769,3 +769,45 @@ Finished building: ex.bin
  
 Finished building: ex.list
  
+20:52:05 **** Incremental Build of configuration Debug for project ex ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:214:8: error: redefinition of 'displayLEDMtrix'
+  214 |   void displayLEDMtrix(uint8_t value)
+      |        ^~~~~~~~~~~~~~~
+../Core/Src/main.c:156:8: note: previous definition of 'displayLEDMtrix' was here
+  156 |   void displayLEDMtrix(uint8_t value)
+      |        ^~~~~~~~~~~~~~~
+../Core/Src/main.c:155:11: warning: unused variable 'matrix_buffer' [-Wunused-variable]
+  155 |   uint8_t matrix_buffer [8] = {0b00000000, 0b11111100, 0b00010010, 0b00010001, 0b00010001, 0b00010010, 0b11111100, 0b00000000 };
+      |           ^~~~~~~~~~~~~
+../Core/Src/main.c:151:7: warning: unused variable 'count_col' [-Wunused-variable]
+  151 |   int count_col =0;
+      |       ^~~~~~~~~
+At top level:
+../Core/Src/main.c:156:8: warning: 'displayLEDMtrix' defined but not used [-Wunused-function]
+  156 |   void displayLEDMtrix(uint8_t value)
+      |        ^~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:52:34 **** Incremental Build of configuration Debug for project ex ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ex.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Desktop\lab_vxl\lab2_1\ex\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ex.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ex.elf
+ 
+arm-none-eabi-size   ex.elf 
+arm-none-eabi-objdump -h -S  ex.elf  > "ex.list"
+arm-none-eabi-objcopy  -O ihex  ex.elf  "ex.hex"
+   text	   data	    bss	    dec	    hex	filename
+  10320	     20	   1668	  12008	   2ee8	ex.elf
+arm-none-eabi-objcopy  -O binary  ex.elf  "ex.bin"
+Finished building: default.size.stdout
+ 
+Finished building: ex.hex
+Finished building: ex.bin
+ 
+ 
+Finished building: ex.list
+ 
